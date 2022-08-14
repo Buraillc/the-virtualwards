@@ -7,7 +7,7 @@ This is the experimental version of the virtual ward.
 
 ## Functions
 
-### Admission process
+⋅⋅* Admission process
 
 ### “Call bell” system
 
