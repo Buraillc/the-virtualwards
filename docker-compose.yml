@@ -1,39 +1,47 @@
 services:
   frontend:
-    image: burai/virtualwards
+    build:
+      context: frontend
+      target: development
     ports:
-      - "443:8043"
+      - 3000:3000
+    stdin_open: true
+    volumes:
+      - ./frontend:/usr/src/app
+      - /usr/src/app/node_modules
+    container_name: frontend
+    restart: always
     networks:
-      - front-tier
-      - back-tier
-    configs:
-      - httpd-config
-    secrets:
-      - server-certificate
+      - react-express
+    depends_on:
+      - backend
 
   backend:
-    image: burai/database
+    container_name: backend
+    restart: always
+    build:
+      context: backend
+      target: development
     volumes:
-      - db-data:/etc/data
+      - ./backend:/usr/src/app
+      - /usr/src/app/node_modules
+    depends_on:
+      - mongo
     networks:
-      - back-tier
-
-volumes:
-  db-data:
-    driver: flocker
-    driver_opts:
-      size: "10GiB"
-
-configs:
-  httpd-config:
-    external: true
-
-secrets:
-  server-certificate:
-    external: true
-
+      - express-mongo
+      - react-express
+    expose: 
+      - 3000
+  mongo:
+    container_name: mongo
+    restart: always
+    image: mongo:5.0.11
+    volumes:
+      - ./data:/data/db
+    networks:
+      - express-mongo
+    expose:
+      - 27017
 networks:
-  # The presence of these objects is sufficient to define them
-  front-tier: {}
-  back-tier: {}
-
+  react-express:
+  express-mongo:
