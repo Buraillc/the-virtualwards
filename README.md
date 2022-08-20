@@ -7,7 +7,10 @@ This is the experimental version of the virtual ward.
 
 ## Functions
 
-#### ・ Admin Dashboard 
+#### Hostpital Side
+#### ・ Admin Dashboard (Patient Management) 
+
+#### Patient Side
 #### ・ Admission process
 
 #### ・ “Call bell” system
