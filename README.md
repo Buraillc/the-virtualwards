@@ -7,6 +7,7 @@ This is the experimental version of the virtual ward.
 
 ## Functions
 
+#### ・ Admin Dashboard 
 #### ・ Admission process
 
 #### ・ “Call bell” system
