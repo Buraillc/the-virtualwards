@@ -1,0 +1,40 @@
+{ 
+  "openapi": "3.0.0",
+   "info": {
+    "title": "Virtual Ward Demo API",
+        "description" : "This is a descirption for API of the Virtual Ward",
+				"version":"1.0"
+},
+  "servers" : [
+	{
+		"url": "api.burai.live/v1",
+     "descirption": "Dev Server For the product"
+  },
+  {
+     "url": "staging server",
+     "descirption": "Staging Server"
+    }
+  ],
+   "paths" :{
+        "/patients": {
+          "get" : {
+            "summry": "Return All Patient Info",
+            "descirption": "All Patient Information", 
+            "responses": {
+              "200" : {
+                "descirption" : "A list of patients",
+                    "content" :{ 
+                        "application/json" :{
+                          "schema" : {
+                            "type" : "array",
+                            "items" : "$ref: '#/components/schemas/patients"
+                          }
+                        }
+                      }
+
+                    }
+                 }
+            }
+          }
+        }
+    } 
