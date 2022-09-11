@@ -4,8 +4,7 @@ This is the experimental version of the virtual ward.
 
 ## CI/CD
 | CI Status| 
-| :---: |
-| ![example workflow](https://github.com/github/docs/actions/workflows/main.yml/badge.svg)|
+[![CI](https://github.com/Buraillc/the-virtualwards/actions/workflows/main.yml/badge.svg)](https://github.com/Buraillc/the-virtualwards/actions/workflows/main.yml)
 
 ## System Design
 
