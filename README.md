@@ -1,6 +1,11 @@
-# Virtual Ward Demo
+ Virtual Ward Demo
 
 This is the experimental version of the virtual ward.
+
+## CI/CD
+| CI Status (master) | 
+| :---: |
+| [![Build Status][Badge-AzurePipelineMaster]]|
 
 ## System Design
 
